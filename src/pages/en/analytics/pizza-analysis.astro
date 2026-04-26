@@ -1,0 +1,117 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { ui } from '../../../utils/ui.js';
+
+const t = ui.en;
+---
+
+<Layout title="Technical Analysis | Jose Perez">
+  <main class="max-w-6xl mx-auto px-6 py-16 md:py-24 text-white">
+    
+    <header class="mb-20">
+      <a href="/en/" class="text-slate-500 text-xs font-mono hover:text-orange-500 transition-colors uppercase tracking-widest">← Back</a>
+      <h1 class="text-5xl font-extrabold italic tracking-tight mb-4">
+        Pizza Sales <span class="text-orange-500">Analytics</span>
+      </h1>
+      <p class="text-slate-400 max-w-3xl font-light">
+        A deep dive into restaurant operations using Python, Pandas, and Matplotlib to identify revenue drivers and optimize inventory.
+      </p>
+    </header>
+
+    <div class="space-y-24">
+      
+      <section class="flex flex-col gap-8"> <div class="space-y-4 max-w-3xl"> <h3 class="text-2xl font-bold text-orange-400 italic font-mono tracking-tighter uppercase">01. Time-Series Analysis</h3>
+          <p class="text-slate-300 leading-relaxed">
+            The processing started with time-series normalization using <span class="text-orange-500 font-mono">Pandas</span>. By grouping transactional data into 30-minute intervals, we identified a critical revenue spike between 12:30 PM and 1:45 PM.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+              <span class="text-orange-500">→</span> Tech: df.groupby('hour')['revenue'].sum()
+            </li>
+            <li class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+              <span class="text-orange-500">→</span> Outcome: Strategic staffing during lunch peaks.
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative group py-4 max-w-4xl"> 
+          <div class="relative bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+            <div class="bg-slate-800/50 px-4 py-2 border-b border-slate-700 flex gap-2">
+              <div class="w-2 h-2 rounded-full bg-slate-700"></div>
+            </div>
+            <img src="/images/pizza-analysis/line-peak-hours.png" alt="Python Graph" class="w-full h-auto" />
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-8">
+        <div class="space-y-4 max-w-3xl">
+          <h3 class="text-2xl font-bold text-orange-400 italic font-mono tracking-tighter uppercase">02. Operational Heatmaps</h3>
+          <p class="text-slate-300 leading-relaxed">
+            Using <span class="text-orange-500 font-mono">Seaborn's</span> heatmap functionality, we mapped sales intensity across the week. This revealed the "Golden Window" for high-ticket orders occurring on Friday nights and Saturday evenings.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+              <span class="text-orange-500">→</span> Tech: sns.heatmap(pivot_table, cmap='YlGnBu')
+            </li>
+            <li class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+              <span class="text-orange-500">→</span> Outcome: Data-driven marketing campaign scheduling.
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative group py-4 max-w-4xl">
+          <div class="relative bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+            <div class="bg-slate-800/50 px-4 py-2 border-b border-slate-700 flex gap-2">
+              <div class="w-2 h-2 rounded-full bg-slate-700"></div>
+            </div>
+            <img src="/images/pizza-analysis/heatmap-sales.png" alt="Heatmap" class="w-full h-auto" />
+          </div>
+        </div>
+      </section>
+
+      <div class="space-y-12">
+      
+      <section class="flex flex-col gap-6">
+        <div class="space-y-4 max-w-3xl">
+          <h3 class="text-2xl font-bold text-orange-400 italic font-mono tracking-tighter uppercase">03. Price Distribution Analysis</h3>
+          <p class="text-slate-300 leading-relaxed">
+            <span class="text-orange-500 font-mono">Boxplots</span> are excellents for detecting premium price points and revenue outliers.
+          </p>
+          <ul class="space-y-2">
+            <li class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+              <span class="text-orange-500">→</span> Tech: sns.boxplot(x='category', y='price', data=df)
+            </li>
+            <li class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+              <span class="text-orange-500">→</span> Insight: Identified "Classic" outliers above $25 and $35, representing high-margin upsell opportunities.
+            </li>
+          </ul>
+        </div>
+
+        <div class="relative group pt-2 max-w-4xl"> 
+          <div class="relative bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+            <div class="bg-slate-800/50 px-4 py-2 border-b border-slate-700 flex gap-2">
+              <div class="w-2 h-2 rounded-full bg-slate-700"></div>
+              <span class="text-[10px] font-mono text-slate-500 ml-2"></span>
+            </div>
+            <img src="/images/pizza-analysis/box-prices.png" alt="Price Distribution Boxplot" class="w-full h-auto opacity-90 hover:opacity-100 transition-opacity" />
+          </div>
+        </div>
+      </section>
+
+      </div> <footer class="mt-12 text-center border-t border-slate-800 pt-10">  
+      <p class="text-slate-400 text-sm md:text-base uppercase font-bold tracking-[0.5em] mb-12 italic opacity-80">
+        — Analysis Complete —
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href="/en/analytics" class="text-xs font-bold border border-slate-700 px-8 py-4 rounded-xl hover:bg-slate-800 transition-all uppercase tracking-widest">
+          Back
+        </a>
+        <a href="/en/chatbot" class="text-xs font-bold bg-orange-600 px-8 py-4 rounded-xl hover:bg-orange-500 transition-all uppercase tracking-widest shadow-lg shadow-orange-900/20">
+          Chat with PizzAI
+        </a>
+      </div>
+    </footer>
+
+  </main>
+</Layout>

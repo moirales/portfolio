@@ -1,0 +1,155 @@
+---
+const { insights, modelFileCode } = Astro.props;
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+  <div class="lg:col-span-7 flex flex-col gap-6">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl overflow-hidden shadow-2xl flex flex-col">
+      <div class="bg-slate-800/80 p-5 border-b border-slate-700 flex items-center justify-between backdrop-blur-sm">
+        <div class="flex items-center gap-4">
+          <div class="relative">
+            <div class="w-12 h-12 rounded-full border-2 border-orange-500 bg-slate-700 flex items-center justify-center text-2xl">📸</div>
+            <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-slate-800 rounded-full animate-pulse"></span>
+          </div>
+          <div>
+            <h2 class="text-lg font-bold text-white leading-tight">Yanis AI</h2>
+            <p class="text-xs text-slate-400">AI Photography Assistant</p>
+          </div>
+        </div>
+        <div class="text-[10px] text-slate-500 font-mono hidden sm:block">ID: YANIS-ANALYSIS-26</div>
+      </div>
+
+      <div id="chat-box" class="h-[450px] overflow-y-auto p-6 space-y-6 bg-[#0b1120] scroll-smooth">
+        <div class="flex gap-4">
+          <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs opacity-70 border border-slate-700">🍊</div>
+          <div class="flex flex-col gap-1 max-w-[85%]">
+            <span class="text-[9px] text-slate-500 uppercase font-bold tracking-widest">Yanis AI</span>
+            <div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none text-sm border border-slate-700 text-slate-100 leading-relaxed shadow-sm">
+              Hello! I am your photography concierge. I've analyzed your session history and pricing guides. How can I help you optimize your portfolio today?
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="px-4 py-3 bg-slate-900/50 border-t border-slate-800 flex gap-2 overflow-x-auto no-scrollbar">
+        {['Newborn Packages', 'Smash the Cake', 'Extra Services', 'Booking Policies'].map((label) => (
+        <button class="quick-btn text-[10px] bg-slate-800 hover:bg-orange-600 px-4 py-2 rounded-full border border-slate-700 transition-all text-slate-200 font-medium whitespace-nowrap">
+            {label}
+        </button>
+      ))}
+    </div>
+
+      <div class="p-4 bg-slate-950 flex gap-3">
+        <input id="user-input" type="text" placeholder="Ask about bookings, sessions, or trends..." 
+          class="flex-grow bg-slate-900 border border-slate-800 rounded-2xl px-5 py-4 text-sm focus:outline-none focus:border-orange-500 text-white placeholder:text-slate-500"/>
+        <button id="send-btn" class="bg-orange-600 px-6 py-4 rounded-2xl hover:bg-orange-500 transition-all text-white shadow-lg shadow-orange-900/20">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="lg:col-span-5 flex flex-col gap-6">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl p-6 shadow-xl">
+      <h3 class="text-xs font-bold text-orange-500 mb-4 uppercase tracking-widest">ModelFile Config</h3>
+      <div class="bg-black/40 rounded-xl p-5 border border-white/5 font-mono text-[11px] text-orange-200/80 whitespace-pre-wrap leading-relaxed">
+        {modelFileCode}
+      </div>
+    </div>
+
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl p-6 shadow-xl">
+      <h3 class="text-xs font-bold text-orange-500 mb-6 uppercase tracking-widest">Architecture Highlights</h3>
+      <div class="space-y-6">
+        {[
+          { title: 'Local Llama 3', desc: 'Securely hosted on Ubuntu/Ollama for total client privacy.' },
+          { title: 'RAG Pipeline', desc: 'Direct PDF-to-context bridge for accurate pricing inquiries.' },
+          { title: 'System Guardrails', desc: 'Sophisticated artistic tone with zero-hallucination logic.' }
+        ].map(item => (
+          <div class="flex gap-4">
+            <div class="h-8 w-1 bg-orange-600 rounded-full mt-1"></div>
+            <div>
+              <h4 class="text-sm font-bold text-white">{item.title}</h4>
+              <p class="text-[11px] text-slate-400 leading-relaxed mt-1">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ insights }}>
+  const chatBox = document.querySelector('#chat-box');
+  const userInput = document.querySelector('#user-input');
+  const sendBtn = document.querySelector('#send-btn');
+  const quickBtns = document.querySelectorAll('.quick-btn');
+
+  // La base de conocimiento estricta extraída de tu documento
+  const KNOWLEDGE_BASE = {
+    newborn: `✨ **Newborn Sessions:** We have 3 tiers. 
+    1. **Just Baby ($3,600)**: 15 retouched digital photos.
+    2. **Nuclear Family ($4,900)**: 20 digital + 20 prints (6x8") and a customized woodbox.
+    3. **Complete**: Includes nuclear family and woodbox (Price not specified in current guide).
+    *Note: All include wardrobe and props.*`,
+
+    smash: `🎂 **Smash the Cake:** 1. **Basic ($4,600)**: Studio session, themed cake/set, and 15 digital photos.
+    2. **Complete ($5,600)**: Adds family photos and a customized woodbox with 25 prints.
+    3. **Premium ($7,100)**: Adds a Milk Bath session (flowers/fruit) and an 8x12" photo album.`,
+
+    extras: `➕ **Additional Items:**
+    • Booking fee: $500 (Newborn) / $1,000 (Smash).
+    • Additional photo: $150 | Package of 10: $1,200.
+    • Photo Album (12x8"): $1,800.
+    • Canvas enlargements: From $900 (60x40cm) to $2,100 (120x80cm).
+    • Express delivery: $1,500.`,
+
+    policy: `📅 **Policies:** For Smash the Cake, book with $1,000 and settle on the session day. Delivery (digital/physical) takes 3 weeks.`,
+
+    default: "I am trained only on **Newborn** and **Smash the Cake** luxury sessions. Please ask about these packages, pricing, or our extras. 🍊"
+  };
+
+  function addMessage(text, isUser = false) {
+    const msg = isUser 
+      ? `<div class="flex flex-col items-end gap-1"><span class="text-[9px] text-slate-500 uppercase font-mono">Creative Director</span><div class="bg-orange-600 p-3 rounded-2xl rounded-tr-none text-sm text-white max-w-[85%] shadow-md">${text}</div></div>`
+      : `<div class="flex gap-4"><div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs border border-orange-500/30">📸</div><div class="flex flex-col gap-1 max-w-[85%]"><span class="text-[9px] text-slate-500 uppercase font-bold tracking-widest text-orange-500">Yanis AI</span><div class="bg-slate-800 p-4 rounded-2xl rounded-tl-none text-sm border border-slate-700 text-slate-100 leading-relaxed shadow-sm">${text}</div></div></div>`;
+    chatBox.innerHTML += msg;
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function handleMessage(text) {
+    if (!text || text.trim() === "") return;
+    addMessage(text, true);
+    userInput.value = '';
+
+    const thinkingId = 'thinking-' + Date.now();
+    chatBox.innerHTML += `<div id="${thinkingId}" class="flex gap-4 animate-pulse"><div class="w-8 h-8 rounded-full bg-slate-800"></div><div class="text-[10px] text-slate-500 italic self-center font-mono">SCANNING_CATALOG...</div></div>`;
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    setTimeout(() => {
+      const loadingMsg = document.getElementById(thinkingId);
+      if(loadingMsg) loadingMsg.remove();
+      
+      const lowerText = text.toLowerCase();
+      let reply = KNOWLEDGE_BASE.default;
+      
+      if (lowerText.includes('newborn') || lowerText.includes('baby')) reply = KNOWLEDGE_BASE.newborn;
+      else if (lowerText.includes('smash') || lowerText.includes('cake')) reply = KNOWLEDGE_BASE.smash;
+      else if (lowerText.includes('price') || lowerText.includes('extra') || lowerText.includes('cost')) reply = KNOWLEDGE_BASE.extras;
+      else if (lowerText.includes('policy') || lowerText.includes('book') || lowerText.includes('delivery')) reply = KNOWLEDGE_BASE.policy;
+      
+      addMessage(reply);
+    }, 600);
+  }
+
+  sendBtn.addEventListener('click', () => handleMessage(userInput.value));
+  userInput.addEventListener('keydown', (e) => e.key === 'Enter' && handleMessage(userInput.value));
+  quickBtns.forEach(btn => btn.addEventListener('click', () => handleMessage(btn.innerText)));
+</script>
+
+<style>
+  /* Personalización de la barra de desplazamiento para que sea discreta */
+  #chat-box::-webkit-scrollbar { width: 4px; }
+  #chat-box::-webkit-scrollbar-track { background: transparent; }
+  #chat-box::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+</style>

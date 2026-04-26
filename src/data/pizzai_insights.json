@@ -1,0 +1,26 @@
+{
+    "metadata": {
+        "last_update": "2026-04-23",
+        "currency": "USD"
+    },
+    "sales_performance": {
+        "best_seller": "Pepperoni Feast",
+        "revenue_total": 12450.5,
+        "peak_hours": "19:00 - 21:00",
+        "most_profitable_day": "Friday"
+    },
+    "inventory": {
+        "critical_low": [
+            "Mozzarella Cheese",
+            "Fresh Basil"
+        ],
+        "surplus": [
+            "Pineapple chunks"
+        ]
+    },
+    "recommendations": [
+        "Increase Mozzarella orders by 15% for next weekend.",
+        "Launch a 'Hawaiian Happy Hour' to reduce pineapple surplus.",
+        "Promote family combos during peak hours to increase average ticket."
+    ]
+}

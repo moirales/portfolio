@@ -1,0 +1,69 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+
+<Layout title="Business Intelligence | Power BI Portfolio">
+  <main class="max-w-6xl mx-auto px-6 py-16 md:py-24 text-white">
+    
+    <header class="mb-20">
+      <div class="inline-block px-3 py-1 mb-4 rounded-lg bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-[10px] font-mono uppercase tracking-[0.3em]">
+        Private Data Case Study
+      </div>
+      <h1 class="text-5xl font-extrabold italic tracking-tight mb-4">
+        Sales & Operations <span class="text-yellow-500">Dashboard</span>
+      </h1>
+      <p class="text-slate-400 max-w-3xl font-light leading-relaxed">
+        Debido a acuerdos de confidencialidad, se presentan capturas del entorno de análisis. Este proyecto integra múltiples fuentes de datos para optimizar la toma de decisiones ejecutivas.
+      </p>
+    </header>
+
+    <div class="space-y-24">
+      <section class="flex flex-col gap-8">
+        <div class="space-y-4">
+          <h3 class="text-2xl font-bold text-yellow-500 italic font-mono uppercase tracking-tighter">01. Executive Overview</h3>
+          <p class="text-slate-300 max-w-3xl">
+            Vista de alto nivel con KPIs principales: Revenue total, Margen de contribución y cumplimiento de objetivos mensuales. Implementación de **filtros dinámicos** por región y periodo.
+          </p>
+        </div>
+        <div class="relative group max-w-5xl">
+          <div class="relative bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+             <div class="bg-slate-800/50 px-4 py-2 border-b border-slate-700">
+              <span class="text-[10px] font-mono text-slate-500 uppercase">Main_Dashboard_View.png</span>
+            </div>
+            <img src="/images/powerbi/dashboard-main.png" alt="Executive Overview" class="w-full h-auto opacity-90" />
+          </div>
+        </div>
+      </section>
+
+      <section class="flex flex-col gap-8">
+        <div class="space-y-4">
+          <h3 class="text-2xl font-bold text-yellow-500 italic font-mono uppercase tracking-tighter">02. Advanced DAX Measures</h3>
+          <p class="text-slate-300 max-w-3xl">
+            Análisis de tendencias temporales utilizando **Time Intelligence**. Comparativas Year-over-Year (YoY) y cálculos de promedios móviles para suavizar la volatilidad de las ventas diarias.
+          </p>
+          <div class="bg-slate-900/50 border-l-2 border-yellow-500 p-4 rounded-r-xl max-w-2xl">
+            <p class="text-xs font-mono text-slate-400">
+              Tech Stack: Power Query (M Language), DAX (Time Intelligence, CALCULATE functions).
+            </p>
+          </div>
+        </div>
+        <div class="relative group max-w-5xl">
+          <div class="relative bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden shadow-2xl">
+            <img src="/images/powerbi/dashboard-dax.png" alt="Detailed Analysis" class="w-full h-auto opacity-90" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="mt-40 text-center border-t border-slate-800 pt-20">
+      <p class="text-slate-500 text-[10px] uppercase font-mono tracking-[0.5em] mb-12 italic">
+        — End of BI Report —
+      </p>
+      <div class="flex flex-col md:flex-row justify-center gap-6">
+        <a href="/en/analytics" class="text-xs font-bold border border-slate-700 px-8 py-4 rounded-xl hover:bg-slate-800 transition-all uppercase tracking-widest">
+          Back
+        </a>
+      </div>
+    </footer>
+  </main>
+</Layout>

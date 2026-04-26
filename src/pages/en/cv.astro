@@ -1,0 +1,252 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="CV | Moises Morales">
+  <main class="min-h-screen bg-[#0b1120] text-white py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      
+      <div class="flex justify-between items-center mb-12">
+        <a href="/en/" class="text-slate-500 text-xs font-mono hover:text-orange-500 transition-colors uppercase tracking-widest">← Back to Home</a>
+        <button onclick="window.print()" class="bg-slate-800 border border-slate-700 px-4 py-2 rounded-lg text-[10px] font-bold hover:bg-slate-700 transition-all uppercase tracking-widest">
+          Download PDF
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        
+        <div class="space-y-10">
+          <section>
+            <h1 class="text-4xl font-extrabold tracking-tighter mb-2">Moises Morales</h1>
+            <p class="text-orange-500 font-mono text-sm uppercase tracking-wider">Systems Engineer</p>
+            <div class="mt-6 space-y-2 text-sm text-slate-400 font-light">
+              <p class="flex items-center gap-3">
+                <span class="text-slate-600">📍</span> Remote / Chiapas, MEX
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-slate-600">📧</span> moises.mcabrera@gmail.com
+              </p>
+              <p class="flex items-center gap-3">
+                <span class="text-slate-600">🔗</span> linkedin.com/in/moisesemorales
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Education</h3>
+            <ul class="space-y-4">
+              <li>
+                <p class="text-xs font-bold text-blue-400">B.S. Business Informatics</p>
+                <p class="text-[11px] text-slate-500 leading-relaxed font-medium">Tec de Monterrey 2011 - 2016</p>
+              </li>
+              <li>
+                <p class="text-xs font-bold text-emerald-400">International Experience</p>
+                <div class="mt-1">
+                  <p class="text-[11px] text-slate-500 leading-relaxed">Name University, Finland — 2015</p>
+                  <p class="text-[11px] text-slate-500 leading-relaxed">NTU, Taiwan — 2017</p>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section>
+            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Specializations</h3>
+            <ul class="space-y-4">
+              <li>
+                <p class="text-xs font-bold text-blue-400">Data Analytics</p>
+                <p class="text-[11px] text-slate-500 leading-relaxed">Jupyter Notebooks, Pandas, Power BI, SQL Optimization.</p>
+              </li>
+              <li>
+                <p class="text-xs font-bold text-emerald-400">AI Implementation</p>
+                <p class="text-[11px] text-slate-500 leading-relaxed">RAG Architecture, Local LLM Deployment (Llama 3), Prompt Engineering.</p>
+              </li>
+            </ul>
+          </section>
+
+          <div class="space-y-6">
+            <section>
+              <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Languages</h3>
+              <div class="flex flex-wrap gap-2">
+                {[
+                  { lang: 'Spanish', level: 'Native' },
+                  { lang: 'English', level: 'C1 Level' },
+                  { lang: 'Mandarin', level: 'Basic' }
+                ].map(item => (
+                  <span class="bg-slate-900 border border-slate-700 px-3 py-1 rounded-md text-[10px] font-mono">
+                    <span style="color: #60A5FA;">{item.lang}</span>
+                    <span class="text-slate-500"> - {item.level}</span>
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Core Stack</h3>
+              <div class="flex flex-wrap gap-2">
+                {['Power BI', 'Python', 'SQL', 'Excel', 'ITIL', 'DAX', 'ServiceNow', 'Astro'].map(skill => (
+                  <span class="bg-slate-900 border border-slate-700 px-3 py-1 rounded-md text-[10px] font-mono text-blue-400">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h3 class="text-xs font-bold text-slate-500 uppercase tracking-[0.2em] mb-4">Exploring & Growth</h3>
+              <div class="flex flex-wrap gap-2">
+                {['Ollama', 'R', 'LLMs', 'Machine Learning'].map(skill => (
+                  <span class="bg-slate-900/50 border border-slate-800 px-3 py-1 rounded-md text-[10px] font-mono text-blue-400">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="lg:col-span-2 space-y-8">
+          
+          <section>
+            <h3 class="text-xs font-bold text-orange-500 uppercase tracking-[0.2em] mb-4 border-b border-slate-800 pb-2">Professional Profile</h3>
+            <p class="text-slate-300 text-sm leading-relaxed italic">
+              "Bilingual IT Professional with a global perspective. Currently architecting AI assistants and local LLM projects, combining data analytics with a purpose that enhances and empowers our daily lives."
+            </p>
+          </section>
+
+          <section>
+            <h3 class="text-xs font-bold text-orange-500 uppercase tracking-[0.2em] mb-6 border-b border-slate-800 pb-2">Work Experience</h3>
+            <div class="space-y-8">
+              <div class="relative pl-6 border-l border-slate-800">
+                <div class="absolute w-2 h-2 bg-orange-600 rounded-full -left-[4.5px] top-1.5"></div>
+                <div class="flex justify-between items-start mb-1">
+                  <h4 class="text-md font-bold text-white">Service Management Coordinator</h4>
+                  <span class="text-[10px] font-mono text-slate-500 uppercase">2023 — Present</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-3">Compucom Systems</p>
+                <ul class="text-xs text-slate-500 space-y-2 list-disc list-inside leading-relaxed">
+                <div class="job-description">
+                  <p style="margin-left: 0; margin-bottom: 10px; text-align: justify;">
+                    Responsible for optimizing Help Desk delivery processes by implementing Shift-Left strategies and rapid-code automation. Focused on proactive issue prevention, significant reduction of MTTR (Mean Time to Resolve), and ensuring 100% compliance with SLA metrics through meticulous incident and request documentation.
+                  </p>
+
+                  <ul style="list-style-position: outside; margin-left: 20px; padding-left: 0;">
+                    <li style="margin-bottom: 8px;">
+                      <strong>Process Optimization:</strong> Enhanced service delivery by identifying automation opportunities and streamlining workflows to mitigate risks affecting customer satisfaction.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>Multi-system Data Management:</strong> Worked with complex ticketing environments (ServiceNow, Cherwell, Data Warehouse) and executed CMDB management to ensure high data integrity and quality.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>Data Analytics & Visualization:</strong> Leveraged SQL, DAX, Power Query, Python (Pandas), and visualization tools (Power BI, Qlik) to transform raw data into actionable insights.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>Stakeholder Engagement:</strong> Led weekly and monthly Business Reviews with clients and internal teams, presenting data-driven strategies to facilitate decision-making.
+                    </li>
+                  <p style="margin-left: -25px; margin-bottom: 5px; text-align: left;">
+                      <strong>Key Achievement:</strong>
+                  </p>                 
+                    <li style="margin-bottom: 8px;">
+                        <strong>SLA & Performance Optimization:</strong> Successfully reduced the overall monthly MTTR by 20 hours consistently over a 16-month period.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Backlog Efficiency:</strong> Achieved a 60% reduction in backlog volume for tickets with 3+ days of aging, streamlining queue management and service responsiveness.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>Process Automation:</strong> Implemented advanced auto-routing rules to optimize request processing, directly supporting Shift-Left strategies.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>CMDB & Quality Control: </strong> Audited and analyzed over 600 configuration item and support function combinations, significantly improving data accuracy.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <strong>AI Integration: </strong> Implementing generative AI and machine learning to automate daily administrative tasks.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="relative pl-6 border-l border-slate-800">
+                <div class="absolute w-2 h-2 bg-slate-700 rounded-full -left-[4.5px] top-1.5"></div>
+                <div class="flex justify-between items-start mb-1">
+                  <h4 class="text-md font-bold text-white">Service Management Coordinator</h4>
+                  <span class="text-[10px] font-mono text-slate-500 uppercase">2022 — 2023</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-3">Compucom Systems</p>
+                <ul class="text-xs text-slate-500 space-y-2 list-disc list-inside leading-relaxed">
+                <div class="job-description">
+                  <p style="margin-left: 0; margin-bottom: 10px; text-align: justify;">
+                    Provided technical support and remote troubleshooting in English and Spanish. Managing high-volume ticket environments, ensuring strict adherence to SLA metrics, and maintaining accurate documentation of incidents and requests.
+                  </p>
+
+                  <ul style="list-style-position: outside; margin-left: 20px; padding-left: 0;">
+                    <li style="margin-bottom: 8px;">
+                      <strong>Technical Support & Troubleshooting:</strong> Delivered expert Level 1 support for hardware, software, and network connectivity issues, providing efficient remote resolution.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>Incident Management:</strong> Managed over 300+ tickets monthly, ensuring proper classification, prioritization, and timely escalation of critical issues to Level 2/3 teams.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>Documentation & Backlog Maintenance:</strong> Maintained rigorous documentation standards, ensuring ticket backlogs were regularly updated and incidents were tracked through to resolution.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="relative pl-6 border-l border-slate-800">
+                <div class="absolute w-2 h-2 bg-slate-700 rounded-full -left-[4.5px] top-1.5"></div>
+                <div class="flex justify-between items-start mb-1">
+                  <h4 class="text-md font-bold text-white">Cross-Industry International Experience & Operations</h4>
+                  <span class="text-[10px] font-mono text-slate-500 uppercase">2016 — 2022</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-3">Multiple Companies and Projects</p>
+                <ul class="text-xs text-slate-500 space-y-2 list-disc list-inside leading-relaxed">
+                <div class="job-description">
+                  <p style="margin-left: 0; margin-bottom: 10px; text-align: justify;">
+                    Proven ability to adapt to demanding environments, from structured ITIL implementations to rigorous industrial operations, consistently maintaining high standards of documentation and cross-cultural communication.
+                  </p>
+
+                  <ul style="list-style-position: outside; margin-left: 20px; padding-left: 0;">
+                    <li style="margin-bottom: 8px;">
+                      <strong>Quality Assurance & Operations (New Zealand):</strong> Executed specialized tasks within the primary industry, adhering to world-class safety and industrial standards.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>Business developer (Taiwan):</strong> Led international restaurant development and market positioning, utilizing trilingual communication to manage stakeholder relations.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>Information Management:</strong> Managed extensive product database, ensuring data integrity, SEO optimization, and precise resource allocation.
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                      <strong>ITIL Framework & Process Documentation:</strong> Assisted in the implementation of a comprehensive local IT asset inventory to ensure resource optimization.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <div class="mt-8 border-b border-slate-800 w-full"></div>
+          </section>
+        </div>
+      </div>
+      
+      <footer class="mt-5 pt-2 border-t border-slate-900 text-center">
+        <p class="text-[9px] font-mono text-slate-600 uppercase tracking-widest">
+          Generated via Astro-Engine | Last update: April 2026
+        </p>
+      </footer>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Optimización para impresión */
+  @media print {
+    body { background: white !important; color: black !important; }
+    main { padding: 0 !important; }
+    .bg-slate-900, .bg-slate-800, .bg-[#0b1120], .bg-black { 
+      background: transparent !important; 
+      color: black !important;
+      border-color: #eee !important;
+    }
+    .text-slate-400, .text-slate-500 { color: #555 !important; }
+    .text-orange-500, .text-blue-400, .text-emerald-400 { color: black !important; font-weight: bold; }
+    button, a[href^="/"] { display: none !important; }
+  }
+</style>

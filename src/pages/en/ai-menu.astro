@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="AI Solutions">
+  <main class="min-h-screen bg-[#0b1120] text-white py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      
+      <a href="/en/" class="text-blue-500 text-xs font-mono mb-8 inline-block hover:underline">← BACK TO HOME</a>
+      <h1 class="text-4xl font-bold mb-4 italic">Artificial Intelligence Assistants</h1>
+      <p class="text-slate-400 mb-12">Specialized LLM deployments and automated chat management.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="/en/pizzai" class="group bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-blue-500/50 transition-all shadow-lg">
+          <div class="flex justify-between items-start mb-4">
+            <span class="bg-emerald-500/10 text-emerald-500 text-[10px] font-bold px-2 py-1 rounded">LIVE DEMO</span>
+            <span class="text-blue-500 text-xl">🍕</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">PizzAI Bot</h2>
+          <p class="text-sm text-slate-400 mb-6">A RAG-based consultant that answers business questions using localized Llama 3 processing.</p>
+          <span class="text-blue-500 text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform inline-block">Launch Assistant →</span>
+        </a>
+
+        <a href="/en/yanis-ai" class="group bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:border-orange-500/50 transition-all shadow-lg">
+          <div class="flex justify-between items-start mb-4">
+            <span class="bg-orange-500/10 text-orange-500 text-[10px] font-bold px-2 py-1 rounded">LIVE DEMO</span>
+            <span class="text-orange-500 text-xl">📸</span>
+          </div>
+          <h2 class="text-2xl font-bold mb-2">Yanis AI</h2>
+          <p class="text-sm text-slate-400 mb-6">Photography assistant for studios. Handles session scheduling, client FAQs, and automated session info via LLM. Designed for potential WhatsApp API integration.</p>
+          <span class="text-orange-500 text-xs font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform inline-block">Launch Assistant →</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+</Layout>

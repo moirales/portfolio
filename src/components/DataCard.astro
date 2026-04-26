@@ -1,0 +1,22 @@
+---
+// src/components/DataCard.astro
+const { title, description, fileName } = Astro.props;
+---
+<div class="bg-slate-900 rounded-xl overflow-hidden border border-slate-800 h-full flex flex-col shadow-lg">
+  <div class="bg-slate-800 px-4 py-2 text-xs font-mono text-slate-400 flex justify-between items-center">
+    <span>{fileName}</span>
+    <span class="text-[10px] uppercase tracking-widest opacity-50">Click to zoom</span>
+  </div>
+  
+  <div 
+    class="w-full cursor-zoom-in overflow-hidden bg-white flex items-center justify-center" 
+    onclick="openModal(this.querySelector('img').src)"
+  >
+    <slot /> 
+  </div>
+
+  <div class="p-5 flex-grow">
+    <h3 class="font-bold text-lg text-white mb-1">{title}</h3>
+    <p class="text-sm text-slate-400 leading-relaxed">{description}</p>
+  </div>
+</div>
